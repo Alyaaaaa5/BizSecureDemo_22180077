@@ -1,6 +1,6 @@
 ﻿namespace BizSecureDemo_22180077.Models
 {
-    public class Order
+    public class Orders
     {
         public int Id { get; set; }
         public int UserId { get; set; }          // собственик

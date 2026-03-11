@@ -48,6 +48,7 @@
             <div class="d-flex gap-2">
                 @if (User.Identity?.IsAuthenticated ?? false)
                 {
+                    <a class="btn btn-outline-light btn-sm" asp-controller="Search" asp-action="Index">Search</a>
                     <a class="btn btn-outline-light btn-sm" asp-controller="Home" aspaction="Index">Landing</a>
                     <form asp-controller="Account" asp-action="Logout" method="post" class="dinline">
                         @Html.AntiForgeryToken()
@@ -58,7 +59,7 @@
                 {
                     <a class="btn btn-outline-light btn-sm" asp-controller="Account" aspaction="Login">Login</a>
                 }
-            </div>
+            </div>9
         </div>
     </nav>
     <main class="container py-4">
