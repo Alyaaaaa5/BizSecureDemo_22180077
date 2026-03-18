@@ -100,8 +100,8 @@ namespace BizSecureDemo.Controllers;
 public class AccountController : Controller
 {
     private readonly AppDbContext _db;
-    private readonly PasswordHasher<AppUser> _hasher;
-    public AccountController(AppDbContext db, PasswordHasher<AppUser> hasher)
+    private readonly PasswordHasher<Users> _hasher;
+    public AccountController(AppDbContext db, PasswordHasher<Users> hasher)
     {
         _db = db;
         _hasher = hasher;
@@ -119,7 +119,7 @@ public class AccountController : Controller
             ModelState.AddModelError("", "Този email вече е регистриран.");
             return View(vm);
         }
-        var user = new AppUser { Email = email };
+        var user = new Users { Email = email };
         user.PasswordHash = _hasher.HashPassword(user, vm.Password);
         _db.Users.Add(user);
         await _db.SaveChangesAsync();

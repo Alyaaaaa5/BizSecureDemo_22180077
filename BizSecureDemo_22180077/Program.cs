@@ -63,7 +63,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(opt =>
  opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-builder.Services.AddSingleton<PasswordHasher<AppUser>>();
+builder.Services.AddSingleton<PasswordHasher<Users>>();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
  .AddCookie(o =>
  {

@@ -22,7 +22,7 @@ public class OrdersController : Controller
 
         var uid = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-        _db.Orders.Add(new Order
+        _db.Orders.Add(new Orders
         {
             UserId = uid,
             Title = vm.Title,
